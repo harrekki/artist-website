@@ -1,0 +1,16 @@
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.modal-body img {
+    width: 100%;
+    height: 100%;
+}
+
+.close {
+    border: 0 solid #fff;
+    outline: none;
+    background-color: #fff;
+}
