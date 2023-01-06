@@ -13,11 +13,11 @@
 <body>
     <header>
         <a href="/index.html">Sign out</a>
-        <h2 class="text-center pb-5">Inventory Management Form</h2>  
+        <h2 class="text-center pb-3 fs-3">Inventory Management Form</h2>  
     </header>
 
-    <main class="position-relative">
-        <div class="w-75 position-absolute start-50 translate-middle border">
+    <main class="container-fluid mb-3">
+        <div class="w-75 border m-auto pb-1">
             <ul class="nav nav-tabs border-secondary bg-light" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                   <button class="nav-link active" id="addItem-tab" data-bs-toggle="tab" data-bs-target="#addItem" type="button" role="tab" aria-controls="add item" aria-selected="true">Add</button>
@@ -32,11 +32,102 @@
                     <button class="nav-link" id="deleteItem-tab" data-bs-toggle="tab" data-bs-target="#deleteItem" type="button" role="tab" aria-controls="delete item" aria-selected="false">Delete</button>
                   </li>
               </ul>
+
               <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="addItem-form" role="tabpanel" aria-labelledby="addItem-tab">...</div>
-                <div class="tab-pane fade" id="viewItem-form" role="tabpanel" aria-labelledby="viewItem-tab">...</div>
-                <div class="tab-pane fade" id="updateItem-form" role="tabpanel" aria-labelledby="updateItem-tab">...</div>
-                <div class="tab-pane fade" id="deleteItem-form" role="tabpanel" aria-labelledby="deleteItem-tab">...</div>
+
+                <!-- Add Item Tab Content -->
+                <div class="container tab-pane fade show active" id="addItem" role="tabpanel" aria-labelledby="addItem-tab">
+                  <div class="row">
+                    <div class="col-6">
+                      <form id="form-addItem" action="">
+                        <fieldset class="border my-2 px-2 bg-light">
+                          <legend class="col-form-label-sm pb-3">Create New Item</legend>
+    
+                          <div class="row mb-3 gx-5">
+                            <label for="inputTitle" class="col-sm-2 col-form-lable col-form-label-sm">Title</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="inputTitle" id="inputTitle" class="form-control form-control-sm">
+                            </div>
+                          </div>
+    
+                          <div class="row mb-3 gx-5">
+                            <label for="inputSeries" class="col-sm-2 col-form-lable col-form-label-sm">Series</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="inputSeries" id="inputSeries" class="form-control form-control-sm">
+                            </div>
+                          </div>
+    
+                          <div class="row mb-3 gx-5">
+                            <label for="inputFormat" class="col-sm-2 col-form-lable col-form-label-sm">Format</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="inputFormat" id="inputFormat" class="form-control form-control-sm">
+                            </div>
+                          </div>
+                          
+                          <div class="row mb-3 gx-5">
+                            <label for="inputMedia" class="col-sm-2 col-form-lable col-form-label-sm">Media</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="inputMedia" id="inputMedia" class="form-control form-control-sm">
+                            </div>
+                          </div>
+    
+                          <div class="row mb-3 gx-5">
+                            <label for="inputWidth" class="col-sm-2 col-form-lable col-form-label-sm">Width</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="inputWidth" id="inputWidth" class="form-control form-control-sm">
+                            </div>
+                          </div>
+                          <div class="row mb-3 gx-5">
+                            <label for="inputHeight" class="col-sm-2 col-form-lable col-form-label-sm">Height</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="inputHeight" id="inputHeight" class="form-control form-control-sm">
+                            </div>
+                          </div>
+                          
+                          <div class="row mb-3 gx-5">
+                            <label for="inputPrice" class="col-sm-2 col-form-lable col-form-label-sm">Price</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="inputPrice" id="inputPrice" class="form-control form-control-sm">
+                            </div>
+                          </div>
+    
+                          <div class="row mb-3 gx-5">
+                            <label for="inputDesc" class="col-sm-2 col-form-lable col-form-label-sm">Description</label>
+                            <div class="col-sm-10">
+                              <textarea type="text" name="inputDesc" id="inputDesc" class="form-control form-control-sm"></textarea>
+                            </div>
+                          </div>
+    
+                        </fieldset>
+                        <div class="d-flex justify-content-center p-2">
+                          <input class="btn btn-outline-success w-100" type="submit" value="Add">
+    
+                        </div>
+                        
+                      </form>
+                    </div>
+                    <div class="col-6 p-4">
+                      <div id="message-add-item">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt ullam ad deleniti iure obcaecati hic dignissimos eligendi animi voluptas quod.
+                        Blanditiis obcaecati repellat, voluptatem exercitationem at optio laudantium reiciendis soluta omnis autem fugit hic odio facilis delectus a quod non!
+                        Maiores necessitatibus, dolores ipsam maxime libero, dolorem vitae laboriosam magnam commodi numquam possimus inventore enim provident sapiente? Aspernatur, velit labore?
+                        Inventore illum repudiandae doloribus consectetur ratione dolor nemo, excepturi provident, veniam nam corrupti fuga quae ab aperiam? Accusantium, natus vitae!
+                        Ducimus animi sapiente, itaque doloremque nesciunt quos ea nemo, magni praesentium repellat perspiciatis tempore pariatur qui provident voluptatibus sed porro?
+                      </div>
+  
+                    </div>
+                  </div>
+                  
+                </div>
+
+                <!-- View Item Tab Content -->
+                <div class="tab-pane fade" id="viewItem" role="tabpanel" aria-labelledby="viewItem-tab"></div>
+
+                <!-- Update Item Tab Content -->
+                <div class="tab-pane fade" id="updateItem" role="tabpanel" aria-labelledby="updateItem-tab">...</div>
+
+                <!-- Delete Item Tab Content -->
+                <div class="tab-pane fade" id="deleteItem" role="tabpanel" aria-labelledby="deleteItem-tab">...</div>
               </div>
         </div>
     </main>
