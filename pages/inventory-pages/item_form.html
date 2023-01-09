@@ -16,7 +16,7 @@
         <h2 class="text-center pb-3 fs-3">Inventory Management Form</h2>  
     </header>
 
-    <main class="container-fluid mb-3">
+    <main class="container-fluid mb-3 p-0">
         <div class="w-75 border m-auto pb-1">
             <ul class="nav nav-tabs border-secondary bg-light" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -46,73 +46,84 @@
                           <div class="row mb-3 gx-5">
                             <label for="inputTitle" class="col-sm-2 col-form-lable col-form-label-sm">Title</label>
                             <div class="col-sm-10">
-                              <input type="text" name="inputTitle" id="inputTitle" class="form-control form-control-sm">
+                              <input type="text" name="inputTitle" id="inputTitle" class="form-control form-control-sm" required>
+                            </div>
+                          </div>
+
+                          <div class="row mb-3 gx-5">
+                            <label for=inputImageUrl" class="col-sm-2 col-form-lable col-form-label-sm">Image URL</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="inputImageUrl" id="inputImageUrl" class="form-control form-control-sm" required>
                             </div>
                           </div>
     
                           <div class="row mb-3 gx-5">
                             <label for="inputSeries" class="col-sm-2 col-form-lable col-form-label-sm">Series</label>
                             <div class="col-sm-10">
-                              <input type="text" name="inputSeries" id="inputSeries" class="form-control form-control-sm">
+                              <input type="text" name="inputSeries" id="inputSeries" class="form-control form-control-sm" required>
                             </div>
                           </div>
     
                           <div class="row mb-3 gx-5">
                             <label for="inputFormat" class="col-sm-2 col-form-lable col-form-label-sm">Format</label>
                             <div class="col-sm-10">
-                              <input type="text" name="inputFormat" id="inputFormat" class="form-control form-control-sm">
+                              <input type="text" name="inputFormat" id="inputFormat" class="form-control form-control-sm" required>
                             </div>
                           </div>
                           
                           <div class="row mb-3 gx-5">
                             <label for="inputMedia" class="col-sm-2 col-form-lable col-form-label-sm">Media</label>
                             <div class="col-sm-10">
-                              <input type="text" name="inputMedia" id="inputMedia" class="form-control form-control-sm">
+                              <input type="text" name="inputMedia" id="inputMedia" class="form-control form-control-sm" required>
                             </div>
                           </div>
     
                           <div class="row mb-3 gx-5">
                             <label for="inputWidth" class="col-sm-2 col-form-lable col-form-label-sm">Width</label>
                             <div class="col-sm-10">
-                              <input type="text" name="inputWidth" id="inputWidth" class="form-control form-control-sm">
+                              <input type="text" name="inputWidth" id="inputWidth" class="form-control form-control-sm" required>
                             </div>
                           </div>
                           <div class="row mb-3 gx-5">
                             <label for="inputHeight" class="col-sm-2 col-form-lable col-form-label-sm">Height</label>
                             <div class="col-sm-10">
-                              <input type="text" name="inputHeight" id="inputHeight" class="form-control form-control-sm">
+                              <input type="text" name="inputHeight" id="inputHeight" class="form-control form-control-sm" required>
                             </div>
                           </div>
                           
                           <div class="row mb-3 gx-5">
                             <label for="inputPrice" class="col-sm-2 col-form-lable col-form-label-sm">Price</label>
                             <div class="col-sm-10">
-                              <input type="text" name="inputPrice" id="inputPrice" class="form-control form-control-sm">
+                              <input type="text" name="inputPrice" id="inputPrice" class="form-control form-control-sm" required>
                             </div>
                           </div>
     
                           <div class="row mb-3 gx-5">
                             <label for="inputDesc" class="col-sm-2 col-form-lable col-form-label-sm">Description</label>
                             <div class="col-sm-10">
-                              <textarea type="text" name="inputDesc" id="inputDesc" class="form-control form-control-sm"></textarea>
+                              <textarea type="text" name="inputDesc" id="inputDesc" class="form-control form-control-sm" required></textarea>
                             </div>
                           </div>
     
                         </fieldset>
                         <div class="d-flex justify-content-center p-2">
                           <input class="btn btn-outline-success w-100" type="submit" value="Add">
-    
                         </div>
                         
                       </form>
                     </div>
                     <div class="col-6 p-4">
                       <div id="message-add-item">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt ullam ad deleniti iure obcaecati hic dignissimos eligendi animi voluptas quod.
-                        Blanditiis obcaecati repellat, voluptatem exercitationem at optio laudantium reiciendis soluta omnis autem fugit hic odio facilis delectus a quod non!
-                        Maiores necessitatibus, dolores ipsam maxime libero, dolorem vitae laboriosam magnam commodi numquam possimus inventore enim provident sapiente? Aspernatur, velit labore?
-                        Inventore illum repudiandae doloribus consectetur ratione dolor nemo, excepturi provident, veniam nam corrupti fuga quae ab aperiam? Accusantium, natus vitae!
-                        Ducimus animi sapiente, itaque doloremque nesciunt quos ea nemo, magni praesentium repellat perspiciatis tempore pariatur qui provident voluptatibus sed porro?
+                        <div class="output" id="view-item-number">Item #: 25689</div>
+                        <div class="output" id="add-title">Title: Rosette #1</div>
+                        <div class="output" id="add-image-url">Image URL: 127.0.0.1:5500/images/rosette1.jpg</div>
+                        <div class="output" id="add-series">Series: Rosettes</div>
+                        <div class="output" id="add-format">Format: Canvas</div>
+                        <div class="output" id="add-media">Media: Acrylic, Collage</div>
+                        <div class="output" id="add-width">Width: 24 inches</div>
+                        <div class="output" id="add-height">Height: 48 inches</div>
+                        <div class="output" id="add-description">Description: Order out of chaos, chaos out of order.  We look into the mist and see ourselves...</div>
+                        <div class="output" id="add-price">Price: $500</div>
                       </div>
   
                     </div>
@@ -121,13 +132,190 @@
                 </div>
 
                 <!-- View Item Tab Content -->
-                <div class="tab-pane fade" id="viewItem" role="tabpanel" aria-labelledby="viewItem-tab"></div>
+                <div class="container tab-pane fade" id="viewItem" role="tabpanel" aria-labelledby="viewItem-tab">
+                  <div class="row">
+                    <div class="col-6">
+                      <form id="form-viewItem" action="">
+                        <fieldset class="border my-2 px-2 bg-light">
+                          <legend class="col-form-label-sm pb-3">View Item</legend>
+                          <div class="row mb-3 gx-4">
+                            <label for="inputViewItemNumber" class="col-sm-2 col-form-lable col-form-label-sm">Item #</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="inputViewItemNumber" id="inputViewItemNumber" class="form-control form-control-sm" required>
+                            </div>
+                          </div>
+                          <br><br><br><br><br><br><br><br><br><br><br><br>
+                        </fieldset>
+
+                        <div class="d-flex justify-content-center p-2">
+                          <input class="btn btn-outline-success w-100" type="submit" value="View">
+                        </div>
+
+                      </form>
+                    </div>
+                    <div class="col-6 py-4">
+                      <div class="message-view-item">
+                        <div class="output" id="view-item-number">Item #: 25689</div>
+                        <div class="output" id="view-title">Title: Rosette #1</div>
+                        <div class="output" id="view-image-url">Image URL: 127.0.0.1:5500/images/rosette1.jpg</div>
+                        <div class="output" id="view-series">Series: Rosettes</div>
+                        <div class="output" id="view-format">Format: Canvas</div>
+                        <div class="output" id="view-media">Media: Acrylic, Collage</div>
+                        <div class="output" id="view-width">Width: 24 inches</div>
+                        <div class="output" id="view-height">Height: 48 inches</div>
+                        <div class="output" id="view-description">Description: Order out of chaos, chaos out of order.  We look into the mist and see ourselves...</div>
+                        <div class="output" id="view-price">Price: $500</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <!-- Update Item Tab Content -->
-                <div class="tab-pane fade" id="updateItem" role="tabpanel" aria-labelledby="updateItem-tab">...</div>
+                <div class="tab-pane fade" id="updateItem" role="tabpanel" aria-labelledby="updateItem-tab">
+                  <div class="row">
+                    <div class="col-6">
+                      <form id="form-updateItem" action="">
+                        <fieldset class="border my-2 px-2 bg-light">
+                          <legend class="col-form-label-sm pb-3">Update Item</legend>
+
+                          <div class="row mb-3 gx-4">
+                            <label for="inputUpdateItemNumber" class="col-sm-2 col-form-lable col-form-label-sm">Item #</label>
+                            <div class="col-sm-10 input-group input-group-sm">
+                              <input type="text" name="inputUpdateItemNumber" id="inputUpdateItemNumber" class="form-control form-control-sm" required>
+                              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Find</button>
+                            </div>
+                          </div>
+
+                          <fieldset class="">
+                            <legend class="col-form-label-sm">Select fields to update: </legend>
+
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-text">
+                                <input type="checkbox" class="form-check-input mt-0 me-2" aria-label="Checkbox for enabling title text input">
+                                <label for="inputUpdateTitle">Title</label>
+                              </div>
+                              <input type="text" name="inputUpdateTitle" id="inputUpdateTitle" class="form-control form-control-sm" readonly>
+                            </div>
+
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-text">
+                                <input type="checkbox" class="form-check-input mt-0 me-2" aria-label="Checkbox for enabling image URL text input">
+                                <label for="inputUpdateImageUrl">Image URL</label>
+                              </div>
+                              <input type="text" name="inputUpdateImageUrl" id="inputUpdateImageUrl" class="form-control form-control-sm" readonly>
+                            </div>
+
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-text">
+                                <input type="checkbox" class="form-check-input mt-0 me-2" aria-label="Checkbox for enabling series text input">
+                                <label for="inputUpdateSeries">Series</label>
+                              </div>
+                              <input type="text" name="inputUpdateSeries" id="inputUpdateSeries" class="form-control form-control-sm" readonly>
+                            </div>
+
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-text">
+                                <input type="checkbox" class="form-check-input mt-0 me-2" aria-label="Checkbox for enabling format text input">
+                                <label for="inputUpdateFormat">Format</label>
+                              </div>
+                              <input type="text" name="inputUpdateFormat" id="inputUpdateFormat" class="form-control form-control-sm" readonly>
+                            </div>
+
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-text">
+                                <input type="checkbox" class="form-check-input mt-0 me-2" aria-label="Checkbox for enabling media text input">
+                                <label for="inputUpdateMedia">Media</label>
+                              </div>
+                              <input type="text" name="inputUpdateMedia" id="inputUpdateMedia" class="form-control form-control-sm" readonly>
+                            </div>
+
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-text">
+                                <input type="checkbox" class="form-check-input mt-0 me-2" aria-label="Checkbox for enabling width text input">
+                                <label for="inputUpdateWidth">Width</label>
+                              </div>
+                              <input type="text" name="inputUpdateWidth" id="inputUpdateWidth" class="form-control form-control-sm" readonly>
+                            </div>
+
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-text">
+                                <input type="checkbox" class="form-check-input mt-0 me-2" aria-label="Checkbox for enabling height text input">
+                                <label for="inputUpdateHeight">Height</label>
+                              </div>
+                              <input type="text" name="inputUpdateHeight" id="inputUpdateHeight" class="form-control form-control-sm" readonly>
+                            </div>
+
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-text">
+                                <input type="checkbox" class="form-check-input mt-0 me-2" aria-label="Checkbox for enabling price text input">
+                                <label for="inputUpdatePrice">Price</label>
+                              </div>
+                              <input type="text" name="inputUpdatePrice" id="inputUpdatePrice" class="form-control form-control-sm" readonly>
+                            </div>
+
+                            <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-text">
+                                <input type="checkbox" class="form-check-input mt-0 me-2" aria-label="Checkbox for enabling description text input">
+                                <label for="inputUpdateDesc">Description</label>
+                              </div>
+                              <textarea name="inputUpdateDesc" id="inputUpdateDesc" class="form-control form-control-sm" readonly></textarea>
+                            </div>
+
+                          </fieldset>
+                        </fieldset>
+
+                        <div class="d-flex justify-content-center p-2">
+                          <input class="btn btn-outline-success w-100" type="submit" value="Update">
+                        </div>
+                        
+                      </form>
+                    </div>
+                    <div class="col-6 p-4">
+                      <div id="message-add-item">
+                        <div class="output" id="update-item-number">Item #: 25689</div>
+                        <div class="output" id="update-title">Title: Rosette #1</div>
+                        <div class="output" id="update-image-url">Image URL: 127.0.0.1:5500/images/rosette1.jpg</div>
+                        <div class="output" id="update-series">Series: Rosettes</div>
+                        <div class="output" id="update-format">Format: Canvas</div>
+                        <div class="output" id="update-media">Media: Acrylic, Collage</div>
+                        <div class="output" id="update-width">Width: 24 inches</div>
+                        <div class="output" id="update-height">Height: 48 inches</div>
+                        <div class="output" id="update-description">Description: Order out of chaos, chaos out of order.  We look into the mist and see ourselves...</div>
+                        <div class="output" id="update-price">Price: $500</div>
+                      </div>
+  
+                    </div>
+                  </div>
+                </div>
 
                 <!-- Delete Item Tab Content -->
-                <div class="tab-pane fade" id="deleteItem" role="tabpanel" aria-labelledby="deleteItem-tab">...</div>
+                <div class="tab-pane fade" id="deleteItem" role="tabpanel" aria-labelledby="deleteItem-tab">
+                  <div class="row">
+                    <div class="col-6">
+                      <form id="form-deleteItem" action="">
+                        <fieldset class="border my-2 px-2 bg-light">
+                          <legend class="col-form-label-sm pb-3">Delete Item</legend>
+                          <div class="row mb-3 gx-4">
+                            <label for="inputDeleteItemNumber" class="col-sm-2 col-form-lable col-form-label-sm">Item #</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="inputDeleteItemNumber" id="inputDeleteItemNumber" class="form-control form-control-sm" required>
+                            </div>
+                          </div>
+                          <br><br><br><br><br><br><br><br><br><br><br><br>
+                        </fieldset>
+
+                        <div class="d-flex justify-content-center p-2">
+                          <input class="btn btn-outline-success w-100" type="submit" value="Delete">
+                        </div>
+
+                      </form>
+                    </div>
+                    <div class="col-6">
+                      <div class="message-view-item">
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
         </div>
     </main>
