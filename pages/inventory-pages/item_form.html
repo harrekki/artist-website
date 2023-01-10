@@ -176,17 +176,19 @@
                     <div class="col-6">
                       <form id="form-updateItem" action="">
                         <fieldset class="border my-2 px-2 bg-light">
-                          <legend class="col-form-label-sm pb-3">Update Item</legend>
+                          <legend class="col-form-label-sm pb-2">Update Item</legend>
 
                           <div class="row mb-3 gx-4">
                             <label for="inputUpdateItemNumber" class="col-sm-2 col-form-lable col-form-label-sm">Item #</label>
                             <div class="col-sm-10 input-group input-group-sm">
                               <input type="text" name="inputUpdateItemNumber" id="inputUpdateItemNumber" class="form-control form-control-sm" required>
+                              <!-- Button to query database for entry matching item number.  If found, it will populate input fields below -->
                               <button class="btn btn-outline-secondary" type="button" id="button-addon2">Find</button>
                             </div>
                           </div>
 
                           <fieldset class="">
+                            <!-- Fields are read-only unless checked.  Unchecked fields will be sent as-is for PUT request -->
                             <legend class="col-form-label-sm">Select fields to update: </legend>
 
                             <div class="input-group input-group-sm mb-3">
