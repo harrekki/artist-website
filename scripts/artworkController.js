@@ -21,16 +21,13 @@ class ArtworkController {
         this.items.push(artwork);
     }
     
+   loadItemsFromLocalStorage() {
+        const storageItems = localStorage.getItem("items");
+        if(storageItems) {
+                const items = JSON.parse(storageItems)
+                for(let i = 0; i < items.length; i++) {
+                    this.items.push(items[i]);
+                }
+        }
+    }
 }
-
-let artworkController = new ArtworkController();
-
-artworkController.addArtwork('Rosette #1', '/images/rosette1.jpg', 'Rosettes', 'canvas', 
-    ['acrylic', 'collage'], 24, 48, 500, 
-    'This is a an incredibly pretentious description of the piece being displayed that goes on way longer than it should.');
-
-artworkController.addArtwork('Messages in Water #1', '/images/messageWater1.jpg', 'Messages in Water', 'canvas', 
-    'acrylic', 24, 48, 500, 
-    'This is a another incredibly pretentious description of the piece being displayed that goes on way longer than it should.');
-    
-console.log(artworkController.items);
