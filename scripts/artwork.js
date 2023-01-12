@@ -62,7 +62,6 @@ function loadItemsFromItemController() {
 }
 
 let artworkController = new ArtworkController();
-console.log(artworkController);
 
 loadStorageSampleData();
 artworkController.loadItemsFromLocalStorage();
