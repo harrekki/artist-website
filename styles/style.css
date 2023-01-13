@@ -1,11 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&family=Barlow+Semi+Condensed:wght@500&family=Barlow:ital,wght@0,400;0,500;1,400&family=Major+Mono+Display&display=swap');
+
+/* General */
+html, body {
+    font-family: 'Barlow', sans-serif;
+    color: #292b5d;
+}
+
+h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+h4, h5 {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.series {
+    font-style: italic;
+}
+
 /* Carousel Styles */
 .carousel-inner > .carousel-item > img {
     max-width: 100%;
     height: auto;
 }
-
-
-
 
 /* Card Styles */
 .card-img-top {
