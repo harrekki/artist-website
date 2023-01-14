@@ -31,12 +31,21 @@ public class ArtworkController {
 
     @PutMapping("/{id}")
     public Artwork update(@RequestBody ArtworkDto artworkDto, @PathVariable Integer id) {
-        //TODO PutMapping method
-        return null;
+        return artworkServiceMySql.findById(id)
+                .map(newArtwork -> {
+                    newArtwork.setTitle(artworkDto.getTitle());
+                    newArtwork.setImageUrl(artworkDto.getImageUrl());
+                    newArtwork.setSeries(artworkDto.getSeries());
+                    newArtwork.setFormat(artworkDto.getFormat());
+                    newArtwork.setMedia(artworkDto.getMedia());
+                    newArtwork.setWidth(artworkDto.getWidth());
+                    newArtwork.setHeight(artworkDto.getHeight());
+                    newArtwork.setDescription(artworkDto.getDescription());
+                    return artworkServiceMySql.save(newArtwork);
+                }).orElseGet(() -> artworkServiceMySql.save(new Artwork(artworkDto)));
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) { artworkServiceMySql.delete(id); }
-
 
 }
