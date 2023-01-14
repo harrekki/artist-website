@@ -1,5 +1,6 @@
 package com.dlarocco.artworksAPI.repository.entity;
 
+import com.dlarocco.artworksAPI.controller.dto.ArtworkDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -37,6 +38,21 @@ public class Artwork {
         this.price = price;
         this.description = description;
     }
+
+    public Artwork(ArtworkDto artworkDto) {
+        this.title = artworkDto.getTitle();
+        this.imageUrl = artworkDto.getImageUrl();
+        this.series = artworkDto.getSeries();
+        this.format = artworkDto.getFormat();
+        this.media = artworkDto.getMedia();
+        this.width = artworkDto.getWidth();
+        this.height = artworkDto.getHeight();
+        this.price = artworkDto.getPrice();
+        this.description = artworkDto.getDescription();
+
+    }
+
+
 
     // Getters and Setters --------------------------------------------------
 
