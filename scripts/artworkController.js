@@ -19,15 +19,72 @@ class ArtworkController {
         };
         
         this.items.push(artwork);
+        localStorage.setItem("items", JSON.stringify(this.items));
+        this.save({title, imageUrl, series, format, media, width, height, price, description});
     }
     
-   loadItemsFromLocalStorage() {
-        const storageItems = localStorage.getItem("items");
-        if(storageItems) {
-                const items = JSON.parse(storageItems)
-                for(let i = 0; i < items.length; i++) {
-                    this.items.push(items[i]);
-                }
-        }
+    save({title, imageUrl, series, format, media, width, height, price, description}) {
+        const data = {title, imageUrl, series, format, media, width, height, price, description};
+
+        fetch('http://localhost:8080/api/artwork', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(jsonResponse => {
+            console.log('Success: ', jsonResponse);
+        })
+        .catch(error => {
+            console.error('Error: ', error);
+        });
+    }
+
+    update(id, {title, imageUrl, series, format, media, width, height, price, description}) {
+        //TODO implement
+        const data = {title, imageUrl, series, format, media, width, height, price, description};
+        fetch(`http://localhost:8080/api/artwork/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(jsonResponse => {
+            console.log('Success: ', jsonResponse);
+        })
+        .catch(error => {
+            console.error('Error: ', error);
+        });
+    }
+
+    delete(id) {
+        //TODO implement
+        fetch(`http://localhost:8080/api/artwork/${id}`, {
+            method: 'DELETE',
+        })
+        .then(response => response.json())
+        .then(jsonResponse => {
+            console.log('Success: ', jsonResponse);
+        })
+        .catch(error => {
+            console.error('Error: ', error);
+        });
+
+    }
+
+    findById(id) {
+        //TODO implement
+        fetch(`http://localhost:8080/api/artwork/${id}`)
+        .then(response => response.json())
+        .then(jsonResponse => {
+            console.log('Success: ', jsonResponse);
+        })
+        .catch(error => {
+            console.error('Error: ', error);
+        });
     }
 }

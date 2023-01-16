@@ -3,6 +3,7 @@ const addItemMessage = document.getElementById('message-add-item');
 
 // Add Item Form ----------------------------------------------
 const addItemForm = document.getElementById('form-addItem');
+const viewItemForm = document.getElementById('form-viewItem';)
 
 
 addItemForm.addEventListener('submit', addNewItemFromForm);
@@ -42,7 +43,9 @@ function addNewItemFromForm(event) {
     addItemForm.reset();
 }
 
-// TODO display item information
+
+
+// Display item information
 function displayArtworkInfo(messageContainer) {
 
     // get last object entered from items array

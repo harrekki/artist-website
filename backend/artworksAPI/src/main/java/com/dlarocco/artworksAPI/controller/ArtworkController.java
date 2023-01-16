@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/artwork")
+@RequestMapping("api/artwork")
 public class ArtworkController {
     final private ArtworkServiceMySql artworkServiceMySql;
 
@@ -23,9 +23,9 @@ public class ArtworkController {
     @GetMapping("/{id}")
     public Optional<Artwork> findArtworkById(@PathVariable Integer id) { return artworkServiceMySql.findById(id);}
 
-    //TODO PostMapping method
+    @CrossOrigin
     @PostMapping
-    public Artwork save(@RequestBody ArtworkDto artworkDto, @PathVariable Integer id) {
+    public Artwork save(@RequestBody ArtworkDto artworkDto) {
         return artworkServiceMySql.save(new Artwork(artworkDto));
     }
 
