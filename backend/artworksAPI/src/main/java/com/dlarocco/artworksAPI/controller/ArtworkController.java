@@ -20,6 +20,7 @@ public class ArtworkController {
     @GetMapping("/all")
     public List<Artwork> getArtworks() {return artworkServiceMySql.all();}
 
+    @CrossOrigin
     @GetMapping("/{id}")
     public Optional<Artwork> findArtworkById(@PathVariable Integer id) { return artworkServiceMySql.findById(id);}
 

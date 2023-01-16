@@ -77,14 +77,15 @@ class ArtworkController {
     }
 
     findById(id) {
-        //TODO implement
-        fetch(`http://localhost:8080/api/artwork/${id}`)
+        let result = fetch(`http://localhost:8080/api/artwork/${id}`)
         .then(response => response.json())
-        .then(jsonResponse => {
-            console.log('Success: ', jsonResponse);
+        .then(data => {
+            console.log('Success: ', data);
+            return data;
         })
         .catch(error => {
             console.error('Error: ', error);
         });
+        return result;
     }
 }
