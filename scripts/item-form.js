@@ -19,7 +19,7 @@ updateFindBtn.addEventListener('click', updateFindItem);
    ################################################################ */
 
 // -------------------add item event handler ----------------------
-function addNewItemFromForm(event) {
+async function addNewItemFromForm(event) {
     event.preventDefault();
 
     // get input elements from form
@@ -45,15 +45,18 @@ function addNewItemFromForm(event) {
     const description = inputDesc.value;
 
     // add artwork to ArtworkController.items
-    artworkController.addArtwork(title, imageUrl, series, format, media, width, height, price, description);
-    alert("Success!  New item has been added.");
+    let artData = await artworkController.addArtwork(title, imageUrl, series, format, media, width, height, price, description);
+    console.log(artData);
 
-    // Access last element pushed to items array and display info
+    // Display artwork info
     const addItemMessage = document.getElementById('message-add-item');
-    const elem = artworkController.items.length - 1;
-    const artworkData = artworkController.items[elem];
-
-    displayArtworkInfo(artworkData,addItemMessage);
+    if(artData instanceof String || typeof artData === 'string')
+        alert("Error: " + artData);
+    else
+    {
+        alert("Success: New item created")
+        displayArtworkInfo(artData,addItemMessage);
+    }
     
     // Clear form
     addItemForm.reset();
@@ -66,15 +69,19 @@ async function viewItemFromForm(event) {
     // get artwork id # from form
     const inputId = document.getElementById('inputViewItemNumber');
     const id = inputId.value;
+    //const id = $('#inputViewItemNumber').prop('value');
 
     // retrieve item from API
     const artworkData = await artworkController.findById(id);
 
-
-
     // display item info
     const viewItemMessage = document.getElementById('message-view-item');
-    displayArtworkInfo(artworkData, viewItemMessage);
+    if(!artworkData)
+        alert("Error: Item not found");
+    else
+    {
+        displayArtworkInfo(artworkData, viewItemMessage);
+    }
 
     // reset form
     viewItemForm.reset();
@@ -98,7 +105,7 @@ async function updateFindItem() {
    $('#inputUpdateDesc').prop('value', data.description);
 
    const fieldset = document.getElementById("updateFieldset");
-   updateFieldset.removeAttribute("disabled");
+   fieldset.removeAttribute("disabled");
     
 }
 
@@ -156,14 +163,14 @@ async function updateItemFromForm(event) {
     displayArtworkInfo(artworkData, messageContainer);
 
     updateItemForm.reset();
-    const findId = document.getElementById("inputUpdateItemNumber").value;
-    findId = '';
+    // const findId = document.getElementById("inputUpdateItemNumber").value;
+    // findId = '';
+    $('#updateSearch').reset();
 
 }
 
 // ----------------- Delete Item Event Handler ------------------------------
-function deleteItemFromForm(event) {
-    //TODO implement
+async function deleteItemFromForm(event) {
     event.preventDefault();
 
     // Get artwork id# from form
@@ -171,8 +178,11 @@ function deleteItemFromForm(event) {
     const id = inputId.value;
 
     // Call api to delete from database
-    artworkController.delete(id);
-    alert("Success: Item has been deleted.");
+    const response = await artworkController.delete(id);
+    if(!response)
+        alert("Success: Item " + id + " has been deleted");
+    else
+        alert("Error: " + response);
 
     deleteItemForm.reset();
 

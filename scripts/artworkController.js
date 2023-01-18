@@ -4,7 +4,7 @@ class ArtworkController {
         this.currentId = currentId;
     }
 
-    addArtwork(title, imageUrl, series, format, media, width, height, price, description) {
+    async addArtwork(title, imageUrl, series, format, media, width, height, price, description) {
         const artwork = {
             id: this.currentId++,
             title: title,
@@ -20,26 +20,30 @@ class ArtworkController {
         
         this.items.push(artwork);
         localStorage.setItem("items", JSON.stringify(this.items));
-        this.save({title, imageUrl, series, format, media, width, height, price, description});
+        let artworkData = await this.save({title, imageUrl, series, format, media, width, height, price, description});
+        return artworkData;
     }
     
     save({title, imageUrl, series, format, media, width, height, price, description}) {
         const data = {title, imageUrl, series, format, media, width, height, price, description};
 
-        fetch('http://localhost:8080/api/artwork', {
+        let result = fetch('http://localhost:8080/api/artwork', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data),
         })
-        .then(response => response.json())
-        .then(jsonResponse => {
-            console.log('Success: ', jsonResponse);
+        .then(response => {
+            if(response.ok)
+                return response.json()
+            else    
+                return "Request failed"
         })
         .catch(error => {
             console.error('Error: ', error);
         });
+        return result;
     }
 
     update(id, {title, imageUrl, series, format, media, width, height, price, description}) {
@@ -62,19 +66,29 @@ class ArtworkController {
     }
 
     delete(id) {
-        //TODO implement
-        fetch(`http://localhost:8080/api/artwork/${id}`, {
+        let result = fetch(`http://localhost:8080/api/artwork/${id}`, {
             method: 'DELETE',
         })
-        .then(console.log("Item deleted."));
+        .then(response => {
+            if(response.status == 500)
+                return 'Item not found';
+            else {
+                console.log("Item deleted.")
+                return ''
+            }
+        })
+        .catch(error => console.log('Error: ', error));
+
+        return result;
     }
 
     findById(id) {
         let result = fetch(`http://localhost:8080/api/artwork/${id}`)
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success: ', data);
-            return data;
+        .then(response => { 
+            if(response.ok)
+                return response.json() 
+            else 
+                return "Item not found"
         })
         .catch(error => {
             console.error('Error: ', error);
