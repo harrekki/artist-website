@@ -30,6 +30,7 @@ public class ArtworkController {
         return artworkServiceMySql.save(new Artwork(artworkDto));
     }
 
+    @CrossOrigin
     @PutMapping("/{id}")
     public Artwork update(@RequestBody ArtworkDto artworkDto, @PathVariable Integer id) {
         return artworkServiceMySql.findById(id)
@@ -46,6 +47,7 @@ public class ArtworkController {
                 }).orElseGet(() -> artworkServiceMySql.save(new Artwork(artworkDto)));
     }
 
+    @CrossOrigin
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) { artworkServiceMySql.delete(id); }
 

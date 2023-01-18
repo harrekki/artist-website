@@ -66,14 +66,7 @@ class ArtworkController {
         fetch(`http://localhost:8080/api/artwork/${id}`, {
             method: 'DELETE',
         })
-        .then(response => response.json())
-        .then(jsonResponse => {
-            console.log('Success: ', jsonResponse);
-        })
-        .catch(error => {
-            console.error('Error: ', error);
-        });
-
+        .then(console.log("Item deleted."));
     }
 
     findById(id) {
@@ -86,6 +79,8 @@ class ArtworkController {
         .catch(error => {
             console.error('Error: ', error);
         });
+        
         return result;
+        
     }
 }
