@@ -23,36 +23,36 @@ function addArtworkCard(artwork) {
     itemContainer.innerHTML += newCard;
 }
 
-function loadStorageSampleData() {
-    if(!localStorage.getItem("items")) {
-        const sampleArtworks = [
-            {
-                'title': 'Collage Etude #7',
-                'imageUrl': '/images/art-study7.jpg',
-                'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'series': 'Etudes',
-                'media': ['collage', 'ink', 'acrylic'],
-                'format': ['framed', 'paper'],
-                'width': 24,
-                'height': 48,
-                'price': 200.00
-            },
-            {
-                'title': 'Messages #1',
-                'imageUrl': '/images/messages1.jpg',
-                'description': 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                'series': 'Messages in Water',
-                'media': ['acrylic'],
-                'format': ['unframed', 'canvas'],
-                'width': 48,
-                'height': 36,
-                'price': 1000.00
-            } 
-        ];
+// function loadStorageSampleData() {
+//     if(!localStorage.getItem("items")) {
+//         const sampleArtworks = [
+//             {
+//                 'title': 'Collage Etude #7',
+//                 'imageUrl': '/images/art-study7.jpg',
+//                 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+//                 'series': 'Etudes',
+//                 'media': ['collage', 'ink', 'acrylic'],
+//                 'format': ['framed', 'paper'],
+//                 'width': 24,
+//                 'height': 48,
+//                 'price': 200.00
+//             },
+//             {
+//                 'title': 'Messages #1',
+//                 'imageUrl': '/images/messages1.jpg',
+//                 'description': 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+//                 'series': 'Messages in Water',
+//                 'media': ['acrylic'],
+//                 'format': ['unframed', 'canvas'],
+//                 'width': 48,
+//                 'height': 36,
+//                 'price': 1000.00
+//             } 
+//         ];
 
-        localStorage.setItem("items", JSON.stringify(sampleArtworks));
-    }
-}
+//         localStorage.setItem("items", JSON.stringify(sampleArtworks));
+//     }
+// }
 
 function loadItemsFromItemController() {
     for(let i = 0; i < artworkController.items.length; i++) {

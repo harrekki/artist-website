@@ -49,20 +49,24 @@ class ArtworkController {
     update(id, {title, imageUrl, series, format, media, width, height, price, description}) {
         //TODO implement
         const data = {title, imageUrl, series, format, media, width, height, price, description};
-        fetch(`http://localhost:8080/api/artwork/${id}`, {
+        let result = fetch(`http://localhost:8080/api/artwork/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data),
         })
-        .then(response => response.json())
-        .then(jsonResponse => {
-            console.log('Success: ', jsonResponse);
+        .then(response => {
+            if(response.ok)
+                return response.json();
+            else
+                return "Resource not available";
         })
         .catch(error => {
             console.error('Error: ', error);
         });
+
+        return result;
     }
 
     delete(id) {

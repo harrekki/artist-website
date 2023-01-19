@@ -4,6 +4,7 @@ const artworkController= new ArtworkController();
 const addItemForm = document.getElementById('form-addItem');
 const viewItemForm = document.getElementById('form-viewItem');
 const updateItemForm = document.getElementById('form-updateItem');
+const updateSearchForm = document.getElementById('updateSearch');
 const deleteItemForm = document.getElementById('form-deleteItem');
 const updateFindBtn = document.getElementById('button-addon2');
 
@@ -89,7 +90,9 @@ async function viewItemFromForm(event) {
 }
 
 // ----------------- Find Item Button Event Handler -------------------------
-async function updateFindItem() {
+async function updateFindItem(event) {
+   event.preventDefault();
+
    const id = document.getElementById("inputUpdateItemNumber").value;
    const data = await artworkController.findById(id);
 
@@ -116,9 +119,7 @@ checkboxes.forEach(checkbox => {
 });
 
 function toggleReadOnly() {
-        console.log(this);
         const inputElem = this.closest(".input-group").lastElementChild;
-        console.log(this.value);
         if(this.checked)
             // remove 'readonly' attribute from associated input
             inputElem.removeAttribute('readonly');
@@ -145,28 +146,17 @@ async function updateItemFromForm(event) {
     const description = $('#inputUpdateDesc').prop('value');
     
     
-    artworkController.update(id, {title, imageUrl, series, format, media, width, height, price, description});
+    let artworkData = await artworkController.update(id, {title, imageUrl, series, format, media, width, height, price, description});
     
     // display update item info
     const messageContainer = document.querySelector("#message-update-item");
-    const artworkData = {
-        id: id, 
-        title: title, 
-        imageUrl: imageUrl, 
-        series: series, 
-        format: format,
-        media: media,
-        width: height,
-        price: price,
-        description: description
-    }
     displayArtworkInfo(artworkData, messageContainer);
 
     updateItemForm.reset();
-    // const findId = document.getElementById("inputUpdateItemNumber").value;
-    // findId = '';
-    $('#updateSearch').reset();
-
+    // apply readonly attribute to all text inputs
+    const inputs = updateItemForm.querySelectorAll(".form-control");
+    inputs.forEach(elem => elem.setAttribute('readonly',''));
+    updateSearchForm.reset();
 }
 
 // ----------------- Delete Item Event Handler ------------------------------
