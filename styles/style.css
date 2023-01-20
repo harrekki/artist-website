@@ -25,9 +25,30 @@ h4, h5 {
 
 
 /* Carousel Styles */
-.carousel-inner > .carousel-item > img {
-    max-width: 100%;
-    height: auto;
+.image {
+    background-color: white;
+    width: auto;
+    height: 600px;
+}
+#image-one {
+    background-image: url('/images/carousel-messages.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+#image-two {
+    background-image: url('/images/carousel-rounds.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+#image-three {
+    background-image: url('/images/carousel-time.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+#image-four {
+    background-image: url('/images/carousel-vita.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 /* Card Styles */
