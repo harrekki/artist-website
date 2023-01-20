@@ -71,7 +71,7 @@ async function viewItemFromForm(event) {
     // get artwork id # from form
     const inputId = document.getElementById('inputViewItemNumber');
     const id = inputId.value;
-    //const id = $('#inputViewItemNumber').prop('value');
+    // const id = $('#inputViewItemNumber').prop('value');
 
     // retrieve item from API
     const artworkData = await artworkController.findById(id);
@@ -132,7 +132,6 @@ function toggleReadOnly() {
 
 // ----------------- Update Item Event Handler ---------------------------
 async function updateItemFromForm(event) {
-    //TODO implement
     event.preventDefault();
 
     const id = $('#inputUpdateItemId').prop('value');
@@ -146,8 +145,8 @@ async function updateItemFromForm(event) {
     const price = $('#inputUpdatePrice').prop('value');
     const description = $('#inputUpdateDesc').prop('value');
     
-    
     let artworkData = await artworkController.update(id, {title, imageUrl, series, format, media, width, height, price, description});
+    console.log(artworkData);
     
     // display update item info
     const messageContainer = document.querySelector("#message-update-item");
@@ -194,7 +193,7 @@ function displayArtworkInfo(artData, messageContainer) {
     $(messageContainer).find(".displayPrice").text(artData.price);
     $(messageContainer).find(".displayDescription").text(artData.description);
 
-    $(messageContainer).fadeIn(300);
+    messageContainer.removeAttribute('hidden');
 }
 
 // Hide message when 'Clear' button is clicked

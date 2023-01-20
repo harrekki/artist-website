@@ -1,3 +1,16 @@
+const artworkController = new ArtworkController();
+
+updateArtworkPage();
+
+async function updateArtworkPage() {
+    const artworkArr = await artworkController.findAll();
+    console.log(artworkArr);
+
+    artworkArr.forEach(element => {
+        addArtworkCard(element);
+    });
+}
+
 function addArtworkCard(artwork) {
     
     const newCard = '<div class="col">\n' +
@@ -54,16 +67,15 @@ function addArtworkCard(artwork) {
 //     }
 // }
 
-function loadItemsFromItemController() {
-    for(let i = 0; i < artworkController.items.length; i++) {
-        const artwork = artworkController.items[i];
-        addArtworkCard(artwork);
-    }
-}
+// function loadItemsFromItemController() {
+//     for(let i = 0; i < artworkController.items.length; i++) {
+//         const artwork = artworkController.items[i];
+//         addArtworkCard(artwork);
+//     }
+// }
 
-let artworkController = new ArtworkController();
 
-loadStorageSampleData();
-artworkController.loadItemsFromLocalStorage();
-console.log(artworkController.items);
-loadItemsFromItemController();
+// loadStorageSampleData();
+// artworkController.loadItemsFromLocalStorage();
+// console.log(artworkController.items);
+// loadItemsFromItemController();

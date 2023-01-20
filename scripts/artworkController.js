@@ -47,7 +47,6 @@ class ArtworkController {
     }
 
     update(id, {title, imageUrl, series, format, media, width, height, price, description}) {
-        //TODO implement
         const data = {title, imageUrl, series, format, media, width, height, price, description};
         let result = fetch(`http://localhost:8080/api/artwork/${id}`, {
             method: 'PUT',
@@ -100,5 +99,20 @@ class ArtworkController {
         
         return result;
         
+    }
+
+    findAll() {
+        let result = fetch(`http://localhost:8080/api/artwork/all`)
+        .then(response => {
+            if(response.ok)
+                return response.json();
+            else 
+                return "Resource not available"
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+        return result;
     }
 }

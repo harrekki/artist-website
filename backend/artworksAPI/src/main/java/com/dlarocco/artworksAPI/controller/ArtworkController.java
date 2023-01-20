@@ -17,6 +17,7 @@ public class ArtworkController {
         this.artworkServiceMySql = artworkServiceMySql;
     }
 
+    @CrossOrigin
     @GetMapping("/all")
     public List<Artwork> getArtworks() {return artworkServiceMySql.all();}
 
@@ -42,6 +43,7 @@ public class ArtworkController {
                     newArtwork.setMedia(artworkDto.getMedia());
                     newArtwork.setWidth(artworkDto.getWidth());
                     newArtwork.setHeight(artworkDto.getHeight());
+                    newArtwork.setPrice(artworkDto.getPrice());
                     newArtwork.setDescription(artworkDto.getDescription());
                     return artworkServiceMySql.save(newArtwork);
                 }).orElseGet(() -> artworkServiceMySql.save(new Artwork(artworkDto)));
