@@ -1,3 +1,4 @@
+$(document).ready(() => {
 const artworkController= new ArtworkController();
 
 // item forms and buttons ----------------------------------------------
@@ -193,7 +194,13 @@ function displayArtworkInfo(artData, messageContainer) {
     $(messageContainer).find(".displayPrice").text(artData.price);
     $(messageContainer).find(".displayDescription").text(artData.description);
 
-    messageContainer.removeAttribute("hidden");
+    $(messageContainer).fadeIn(300);
 }
 
+// Hide message when 'Clear' button is clicked
+$('.hide-btn').on('click', event => {
+    $(event.currentTarget).parents('.message').fadeOut(300);
+});
 
+
+});
