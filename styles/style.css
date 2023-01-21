@@ -4,6 +4,7 @@
 html, body {
     font-family: 'Barlow', sans-serif;
     color: #292b5d;
+    background-color: snow;
 }
 
 h1 {
@@ -19,14 +20,16 @@ h4, h5 {
 }
 
 /* Navbar Styles */
-
+.navbar {
+    background-color: #ecebf9;
+}
 
 
 
 
 /* Carousel Styles */
 .image {
-    background-color: white;
+    background-color: snow;
     width: auto;
     height: 600px;
 }
