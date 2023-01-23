@@ -15,17 +15,11 @@ h4, h5 {
     font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
-.series {
-    font-style: italic;
-}
 
 /* Navbar Styles */
 .navbar {
     background-color: #ecebf9;
 }
-
-
-
 
 /* Carousel Styles */
 .image {
@@ -63,6 +57,10 @@ h4, h5 {
     width: 100%;
     height: 15vw;
     object-fit: cover;
+}
+
+.series {
+    font-style: italic;
 }
 
 /* Modal Styles */ 
