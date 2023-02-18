@@ -52,6 +52,11 @@ h4, h5 {
     width: 5% !important;
 } */
 
+/* Home page */
+#row-2 {
+    background-color: lightgrey;
+}
+
 /* Card Styles */
 .card-img-top {
     width: 100%;
