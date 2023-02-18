@@ -48,13 +48,9 @@ h4, h5 {
     background-repeat: no-repeat;
 }
 
-/* .carousel-control {
-    width: 5% !important;
-} */
-
 /* Home page */
 #row-2 {
-    background-color: lightgrey;
+    background-color:gainsboro;
 }
 
 /* Card Styles */
