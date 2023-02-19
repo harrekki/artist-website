@@ -7,11 +7,11 @@ html, body {
     background-color: snow;
 }
 
-h1 {
+h1, h2, h3 {
     font-family: 'Barlow Condensed', sans-serif;
 }
 
-h4, h5 {
+h4, h5, h6 {
     font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
@@ -74,4 +74,9 @@ h4, h5 {
     border: 0 solid #fff;
     outline: none;
     background-color: #fff;
+}
+
+/* footer */
+footer {
+    background-color: #ecebf9;
 }

@@ -28,10 +28,6 @@
                         <a class="nav-link px-3" href="contact.html">Contact</a>
                     </div>
                 </div>
-                <a href="inventory-pages/login.html" class="navbar-brand">
-                    <i class="fa-solid fa-user d-inline-block"></i>
-                    <span class="fs-6">Sign-in</span> 
-                </a>
             </div>
         </nav>
     </header>
@@ -54,7 +50,31 @@
             </div>
         </div>
     </main>
-    <footer></footer>
+    <footer class="border-top py-2 d-flex align-items-center justify-content-around">
+        <div>
+          <p class="mb-0">&copy; 2023 David LaRocco</p>
+        </div>
+        <div class="dropup">
+          <button type="button" class="btn btn-link dropdown-toggle p-0" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+            Admin log in
+          </button>
+          <form class="dropdown-menu bg-light p-4 " action="/pages/inventory-pages/item_form.html">
+            <div class="mb-3">
+              <label for="dropdownFormEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="dropdownFormEmail" placeholder="email@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="dropdownFormPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="dropdownFormPassword" placeholder="Password">
+            </div>
+            <div class="mb-3">
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn btn-outline-primary">Sign in</button>
+          </form>
+        </div>
+    </footer>
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
