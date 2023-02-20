@@ -12,32 +12,29 @@
 </head>
 <body>
     <header class="sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-light border-bottom">
-            <div class="container-fluid d-flex justify-content-center align-items-center">
+        <nav class="navbar navbar-expand-md navbar-light border-bottom">
+            <div class="container-fluid">
                 <span class="navbar-brand mb-0">
                     <img src="/images/logos/DSLogoSingleLineNav.png" alt="">
                 </span>
                 <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav position-absolute top-50 start-50 translate-middle">
-                        <a class="nav-link px-3" href="/index.html">Home</a>
-                        <a class="nav-link px-3" href="products.html">Artwork</a>
-                        <a class="nav-link px-3 active" aria-current="about page" href="#">About</a>
-                        <a class="nav-link px-3" href="contact.html">Contact</a>
+                  <div class="collapse navbar-collapse ps-5" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link px-3 active" aria-current="contact page" href="#">Home</a>
+                        <a class="nav-link px-3" href="/pages/products.html">Artwork</a>
+                        <a class="nav-link px-3" href="/pages/about.html">About</a>
+                        <a class="nav-link px-3" href="/pages/contact.html">Contact</a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="container">
+    <main class="container-fluid">
         <div class="row align-items-center">
-            <div class="col position-relative" id="about-left">
-                <img class="position-absolute top-50 start-50 translate-middle ms-5 rounded-2" src="/images/artist-pic.JPG" width="386" height="515" alt="David Sogno">
-            </div>
-            <div class="col m-3" id="about-right">
+            <div class="col-md m-3 order-md-1" id="about-right">
                 <h1 class="fs-2">About the Artist</h1>
                 <div class="text">
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel accusamus beatae similique quia necessitatibus? Illum quas et dolores incidunt veritatis consequatur. Impedit quam nesciunt earum commodi mollitia, magni velit totam!</p>
@@ -48,6 +45,10 @@
                     Natus, doloribus aut. Fugiat eum, facere, quibusdam eligendi cumque non recusandae alias voluptas, voluptatem eveniet nihil reprehenderit corrupti optio est.</p>
                 </div>
             </div>
+            <div class="col-md order-md-0 d-flex justify-content-center align-items-center" id="about-left">
+                <img class="rounded-2" src="/images/artist-pic.JPG" width="386" height="515" alt="David Sogno">
+            </div>
+            
         </div>
     </main>
     <footer class="border-top py-2 d-flex align-items-center justify-content-around">
