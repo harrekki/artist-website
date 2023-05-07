@@ -1,15 +1,15 @@
 const artworkController = new ArtworkController();
 
-updateArtworkPage();
-
 async function updateArtworkPage() {
     const artworkArr = await artworkController.findAll();
     console.log(artworkArr);
-
+    
     artworkArr.forEach(element => {
         addArtworkCard(element);
     });
 }
+
+updateArtworkPage();
 
 function addArtworkCard(artwork) {
     
