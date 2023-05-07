@@ -36,6 +36,9 @@ function addArtworkCard(artwork) {
     itemContainer.innerHTML += newCard;
 }
 
+// *This code uses localStorage to simulate API calls
+// **Leaving in place to help JFS learners during Sprint 2
+
 // function loadStorageSampleData() {
 //     if(!localStorage.getItem("items")) {
 //         const sampleArtworks = [
