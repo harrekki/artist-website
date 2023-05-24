@@ -46,8 +46,8 @@ $(document).ready(() => {
         // display item info
         const viewItemMessage = document.getElementById('message-view-item');
         !artworkData
-        ? alert("Error: Item not found")
-        : displayArtworkInfo(artworkData, viewItemMessage);
+            ? alert("Error: Item not found")
+            : displayArtworkInfo(artworkData, viewItemMessage);
         
         $('#form-viewItem').reset();
     }
@@ -87,10 +87,9 @@ $(document).ready(() => {
 
     function toggleReadOnly() {
         const inputElem = this.closest(".input-group").lastElementChild;
-        if(this.checked)
-            inputElem.removeAttribute('readonly');
-            else
-            inputElem.setAttribute('readonly','');
+        this.checked
+            ? inputElem.removeAttribute('readonly')
+            : inputElem.setAttribute('readonly','');
         }
         
         
