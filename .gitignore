@@ -1,4 +1,12 @@
-backend/artworksAPI/src/main/resources/application.properties
-.vscode/
+# Configuration Files
+src/main/resources/application.properties
+src/frontend/build/.vscode/
+.idea
+.mvn
+mvnw
+mvnw.cmd
+
+# Files and file types
+target/
 *.class
 ..gitignore.swp
