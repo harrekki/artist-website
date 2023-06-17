@@ -1,3 +1,4 @@
 /backend/artworksAPI/src/main/resources/application.properties
 .vscode/
 *.class
+..gitignore.swp
