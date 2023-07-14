@@ -10,3 +10,4 @@ mvnw.cmd
 target/
 *.class
 ..gitignore.swp
+docker-compose.yaml
