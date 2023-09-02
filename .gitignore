@@ -1,5 +1,6 @@
 # Configuration Files
-src/main/resources/application.properties
+src/main/resources/application.properties.values
+rc/main/resources/application.properties.example
 src/frontend/build/.vscode/
 .idea
 .mvn
