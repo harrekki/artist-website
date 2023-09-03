@@ -12,6 +12,3 @@ target/
 *.class
 ..gitignore.swp
 docker-compose.yaml
-
-.vscode
-
